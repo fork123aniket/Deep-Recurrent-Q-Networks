@@ -8,7 +8,7 @@ def processState(state1):
     return np.reshape(state1, [21168])
 
 
-# These functions allows us to update the parameters of our target network with those of the primary network.
+# These functions allow us to update the parameters of our target network with those of the primary network.
 def updateTargetGraph(tfVars, tau):
     total_vars = len(tfVars)
     op_holder = []
@@ -101,6 +101,5 @@ def make_gif(images, fname, duration=2, true_image=False, salience=False, salIMG
         clipB = clip.set_opacity(0)
         mask = mask.set_opacity(0.1)
         mask.write_gif(fname, fps=len(images) / duration, verbose=False)
-        # clipB.write_gif(fname, fps = len(images) / duration,verbose=False)
     else:
         clip.write_gif(fname, fps=len(images) / duration, verbose=False)
