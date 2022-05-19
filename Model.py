@@ -6,7 +6,7 @@ import tensorflow.contrib.slim as slim
 
 class Qnetwork:
     def __init__(self, h_size, rnn_cell, myScope):
-        # The network recieves a frame from the game, flattened into an array.
+        # The network receives a frame from the game, flattened into an array.
         # It then resizes it and processes it through four convolutional layers.
         self.scalarInput = tf.placeholder(shape=[None, 21168], dtype=tf.float32)
         self.imageIn = tf.reshape(self.scalarInput, shape=[-1, 84, 84, 3])
@@ -30,7 +30,7 @@ class Qnetwork:
         self.trainLength = tf.placeholder(dtype=tf.int32)
         # We take the output from the final convolutional layer and send it to a recurrent layer.
         # The input must be reshaped into [batch x trace x units] for rnn processing,
-        # and then returned to [batch x units] when sent through the upper levles.
+        # and then returned to [batch x units] when sent through the upper levels.
         self.batch_size = tf.placeholder(dtype=tf.int32, shape=[])
         self.convFlat = tf.reshape(slim.flatten(self.conv4), [self.batch_size, self.trainLength, h_size])
         self.state_in = rnn_cell.zero_state(self.batch_size, tf.float32)
@@ -58,7 +58,7 @@ class Qnetwork:
 
         self.td_error = tf.square(self.targetQ - self.Q)
 
-        # In order to only propogate accurate gradients through the network, we will mask the first
+        # In order to only propagate accurate gradients through the network, we will mask the first
         # half of the losses for each trace as per Lample & Chatlot 2016
         self.maskA = tf.zeros([self.batch_size, self.trainLength // 2])
         self.maskB = tf.ones([self.batch_size, self.trainLength // 2])
