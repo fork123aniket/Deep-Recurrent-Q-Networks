@@ -41,8 +41,6 @@ if not os.path.exists(path):
 with open('./Center/log.csv', 'w') as myfile:
     wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
     wr.writerow(['Episode', 'Length', 'Reward', 'IMG', 'LOG', 'SAL'])
-
-    # wr = csv.writer(open('./Center/log.csv', 'a'), quoting=csv.QUOTE_ALL)
 with tf.Session() as sess:
     if load_model:
         print('Loading Model...')
