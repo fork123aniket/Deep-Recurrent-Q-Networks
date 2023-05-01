@@ -12,7 +12,7 @@ In this new version of the GridWorld, the agent can only see a single block arou
 - To test a preTrained network : run `test.py`
 - To see the ***DRQN*** implementation, please check `Model.py`
 - Other imperative helper utilities to properly train the ***Deep Recurrent Q-Networks*** can be found in `helper.py` file.
-- All hyperparamters to control training and testing of ***DRQNs*** are provided in their respective `.py` files.
+- All hyperparameters to control training and testing of ***DRQNs*** are provided in their respective `.py` files.
 ## Results
 | Gridworld Environment        | Gridworld Results           |
 | ------------------------------ |:-----------------------------:|
