@@ -6,7 +6,7 @@ This repository demonstrates the implementation of [***Deep Recurrent Q-Networks
 ## Training Environment Used
 - `The Spatially Limited Gridworld Environment`
 
-In this new version of the GridWorld, the agent can only see a single block around it in any direction, whereas the environment itself contains *9x9* blocks. Each episode is fixed at *50* steps, there are four green and two red squares, and when the agent moves to a red or green square, a new one is randomly placed in the environment to replace it.
+In this new version of the `GridWorld`, the agent can only see a single block around it in any direction, whereas the environment itself contains *9x9* blocks. Each episode is fixed at *50* steps, there are four green and two red squares, and when the agent moves to a red or green square, a new one is randomly placed in the environment to replace it.
 ## Usage
 - To train a new network : run `training.py`
 - To test a preTrained network : run `test.py`
